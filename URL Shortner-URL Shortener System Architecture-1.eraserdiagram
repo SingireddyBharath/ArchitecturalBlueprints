@@ -1,0 +1,27 @@
+cloud-architecture-diagram
+
+title URL Shortener System Architecture
+
+// Frontend and API handling
+Web Services [color: lightblue] {
+  Node.js API [icon: aws-lambda]
+  Docker Container [icon: docker]
+}
+
+// Database and caching services
+Data Management [color: lightgreen] {
+  MongoDB [icon: database]
+  Redis Cache [icon: aws-elasticache]
+}
+
+Load Balancer [icon: aws-elastic-load-balancing]
+
+// Connections
+// Connect Load Balancer to Web Services
+Load Balancer > Web Services
+
+// Web Services connections
+// Web Services: Node.js API, Docker Container
+Node.js API > MongoDB
+Node.js API > Redis Cache
+
