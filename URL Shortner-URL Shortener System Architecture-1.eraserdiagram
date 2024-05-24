@@ -16,6 +16,10 @@ Data Management [color: lightgreen] {
 
 Load Balancer [icon: aws-elastic-load-balancing]
 
+Users [icon: users]
+
+Logging [icon: aws-cloudwatch]
+
 // Connections
 // Connect Load Balancer to Web Services
 Load Balancer > Web Services
@@ -24,4 +28,14 @@ Load Balancer > Web Services
 // Web Services: Node.js API, Docker Container
 Node.js API > MongoDB
 Node.js API > Redis Cache
+
+// User connections
+Users > Load Balancer
+
+// Cache hit and miss
+Redis Cache > MongoDB: cache miss
+Redis Cache <> Node.js API: cache hit
+
+// Logging
+Node.js API > Logging
 
